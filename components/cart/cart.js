@@ -5,7 +5,7 @@ angular.module("cart", [])
 			addProduct: function (id, name, price) {
 				var addedToExistingItem = false;
 				for (var i = 0; i < cartData.length; i++) {
-					if(cartData[i].id == id) {
+					if(cartData[i].id == id) {						
 						cartData[i].count++;
 						addedToExistingItem = true;
 						break;
@@ -46,10 +46,11 @@ angular.module("cart", [])
 				}
 
 				$scope.itemCount = function () {
-					var total;
+					var total = 0;
 					for( var i = 0; i < cartData.length; i++) {
-						total += cartData[i].count;
+							total += cartData[i].count;
 					}
+
 					return total;
 				}
 			}
